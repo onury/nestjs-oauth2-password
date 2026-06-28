@@ -12,7 +12,7 @@
 
 OAuth2 Resource Owner Password Credentials (ROPC) for [NestJS](https://nestjs.com): **opaque, server-stored, revocable** access + refresh tokens, an [RFC 6749](https://www.rfc-editor.org/rfc/rfc6749) token endpoint with [RFC 7009](https://www.rfc-editor.org/rfc/rfc7009) revocation, and a default-deny bearer guard — wired with a single `forRoot()`.
 
-> **ESM-only.** Requires Node ≥ 20 and NestJS 10 / 11.
+> **[ESM](https://gist.github.com/onury/d3f3d765d7db2e8b2d050d14315f2ac7)-only.** Requires Node ≥ 20 and NestJS 10 / 11.
 >
 > This is the **opaque-token** half. It owns the OAuth2 *flow* and delegates the credential check to the token-agnostic companion (`nestjs-credentials`) and token storage to your database. For stateless self-contained JWTs instead, use the sibling `nestjs-jwt-guard`.
 
