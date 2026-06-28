@@ -249,9 +249,9 @@ export class AdminController {}
 
 - [**nestjs-credentials**](https://github.com/onury/nestjs-credentials) — Token-agnostic username/password verification: a `UserStore` seam + pluggable `PasswordHasher`. The natural `validateUser` companion.
 - [**nestjs-jwt-guard**](https://github.com/onury/nestjs-jwt-guard) — The stateless, self-contained-JWT alternative: a configurable bearer guard, `@Public()`, and a token-issuance helper.
-- [**nestjs-accesscontrol**](https://github.com/onury/nestjs-accesscontrol) — The official NestJS integration for AccessControl v3: RBAC + ABAC with fluent CRUD decorators and attribute filtering.
+- [**nestjs-accesscontrol**](https://github.com/onury/nestjs-accesscontrol) — The official NestJS integration for [AccessControl v3](https://github.com/onury/accesscontrol): RBAC + ABAC with fluent CRUD decorators and attribute filtering.
 - [**nestjs-http-envelope**](https://github.com/onury/nestjs-http-envelope) — A uniform, configurable response & error envelope for NestJS.
-- [**nestjs-configuard**](https://github.com/onury/nestjs-configuard) — The NestJS integration for configuard: DB-backed, typed, ABAC-filtered runtime config.
+- [**nestjs-configuard**](https://github.com/onury/nestjs-configuard) — The NestJS integration for [configuard](https://github.com/onury/configuard): DB-backed, typed, ABAC-filtered runtime config.
 
 ## License
 
