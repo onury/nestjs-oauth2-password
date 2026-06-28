@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { OAuth2Exception } from './oauth2.error';
 import type { ResolvedOAuth2PasswordOptions } from './options';
-import { expiresAt, generateToken, isExpired } from './token.util';
+import { expiryDate, generateToken, isExpired } from './token.util';
 import { OAUTH2_PASSWORD_OPTIONS } from './tokens';
 import type { RevokeRequest, StoredAccessToken, TokenRequest, TokenResponse } from './types';
 
@@ -54,7 +54,7 @@ export class OAuth2PasswordService<TUser = unknown, TClient = unknown> {
   /** Authenticate a bearer access token for the guard. `null` ⇒ reject. */
   async verifyAccessToken(token: string): Promise<StoredAccessToken<TUser, TClient> | null> {
     const record = await this.options.tokenStore.findAccessToken(token);
-    if (!record || isExpired(record.expiresAt)) return null;
+    if (!record || isExpired(record.expiryDate)) return null;
     return record;
   }
 
@@ -76,7 +76,7 @@ export class OAuth2PasswordService<TUser = unknown, TClient = unknown> {
       throw new OAuth2Exception('invalid_request', 'refresh_token is required');
     }
     const record = await this.options.tokenStore.findRefreshToken(body.refresh_token);
-    if (!record || isExpired(record.expiresAt)) {
+    if (!record || isExpired(record.expiryDate)) {
       throw new OAuth2Exception('invalid_grant', 'invalid or expired refresh token');
     }
     // Rotate: revoke the presented refresh token and the access token it was
@@ -98,7 +98,7 @@ export class OAuth2PasswordService<TUser = unknown, TClient = unknown> {
       user,
       client,
       scope,
-      expiresAt: expiresAt(o.accessTokenTtl)
+      expiryDate: expiryDate(o.accessTokenTtl)
     });
     const response: TokenResponse = {
       access_token: accessToken,
@@ -114,7 +114,7 @@ export class OAuth2PasswordService<TUser = unknown, TClient = unknown> {
         user,
         client,
         scope,
-        expiresAt: expiresAt(o.refreshTokenTtl)
+        expiryDate: expiryDate(o.refreshTokenTtl)
       });
       response.refresh_token = refreshToken;
     }

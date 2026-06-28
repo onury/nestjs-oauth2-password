@@ -21,7 +21,7 @@ export function hashToken(token: string): string {
 }
 
 /** Compute an absolute expiry `ttlSeconds` from `now` (default: current time). */
-export function expiresAt(ttlSeconds: number, now: Date = new Date()): Date {
+export function expiryDate(ttlSeconds: number, now: Date = new Date()): Date {
   return new Date(now.getTime() + ttlSeconds * 1000);
 }
 

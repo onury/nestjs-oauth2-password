@@ -47,7 +47,7 @@ export interface IssuedAccessToken<TUser = unknown, TClient = unknown> {
   user: TUser;
   client: TClient | null;
   scope?: string;
-  expiresAt: Date;
+  expiryDate: Date;
 }
 
 /**
@@ -60,7 +60,7 @@ export interface IssuedRefreshToken<TUser = unknown, TClient = unknown> {
   user: TUser;
   client: TClient | null;
   scope?: string;
-  expiresAt: Date;
+  expiryDate: Date;
 }
 
 /** A persisted access token returned from a lookup. */
@@ -68,7 +68,7 @@ export interface StoredAccessToken<TUser = unknown, TClient = unknown> {
   user: TUser;
   client: TClient | null;
   scope?: string;
-  expiresAt: Date;
+  expiryDate: Date;
 }
 
 /**
@@ -79,14 +79,14 @@ export interface StoredRefreshToken<TUser = unknown, TClient = unknown> {
   user: TUser;
   client: TClient | null;
   scope?: string;
-  expiresAt: Date;
+  expiryDate: Date;
   accessToken: string;
 }
 
 /**
  * The token persistence seam. The package never stores anything itself; you
  * back this with Prisma/TypeORM/Redis/etc. Lookups return `null` for unknown
- * tokens; the package additionally treats an `expiresAt` in the past as expired
+ * tokens; the package additionally treats an `expiryDate` in the past as expired
  * (defense in depth — you may also filter expired rows at the query).
  */
 export interface TokenStore<TUser = unknown, TClient = unknown> {

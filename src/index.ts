@@ -12,7 +12,7 @@ export {
   resolveOptions
 } from './options';
 export { IS_PUBLIC_KEY, Public } from './public.decorator';
-export { expiresAt, generateToken, hashToken, isExpired } from './token.util';
+export { expiryDate, generateToken, hashToken, isExpired } from './token.util';
 export { OAUTH2_PASSWORD_OPTIONS } from './tokens';
 export type {
   AuthenticatedRequest,
