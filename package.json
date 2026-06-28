@@ -1,7 +1,7 @@
 {
   "name": "nestjs-oauth2-password",
   "version": "1.0.0",
-  "description": "Passport-free OAuth2 Resource Owner Password Credentials (ROPC) for NestJS — opaque, server-stored, revocable access + refresh tokens, an RFC 6749 token endpoint, and a bearer guard.",
+  "description": "OAuth2 Resource Owner Password Credentials (ROPC) for NestJS — opaque, server-stored, revocable access + refresh tokens, an RFC 6749 token endpoint, and a bearer guard.",
   "type": "module",
   "license": "MIT",
   "author": "Onur Yıldırım",

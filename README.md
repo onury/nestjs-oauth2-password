@@ -10,7 +10,7 @@
   <a href="https://github.com/onury/nestjs-oauth2-password/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="license" /></a>
 </p>
 
-**Passport-free** OAuth2 Resource Owner Password Credentials (ROPC) for [NestJS](https://nestjs.com): **opaque, server-stored, revocable** access + refresh tokens, an [RFC 6749](https://www.rfc-editor.org/rfc/rfc6749) token endpoint with [RFC 7009](https://www.rfc-editor.org/rfc/rfc7009) revocation, and a default-deny bearer guard — wired with a single `forRoot()`.
+OAuth2 Resource Owner Password Credentials (ROPC) for [NestJS](https://nestjs.com): **opaque, server-stored, revocable** access + refresh tokens, an [RFC 6749](https://www.rfc-editor.org/rfc/rfc6749) token endpoint with [RFC 7009](https://www.rfc-editor.org/rfc/rfc7009) revocation, and a default-deny bearer guard — wired with a single `forRoot()`.
 
 > **ESM-only.** Requires Node ≥ 20 and NestJS 10 / 11.
 >
