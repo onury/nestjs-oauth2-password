@@ -100,7 +100,7 @@ POST /oauth/revoke
 { "token": "8Qb…", "token_type_hint": "refresh_token" }
 ```
 
-> Using [`nestjs-http-envelope`](https://github.com/onury/nestjs-http-envelope)? Mark the OAuth2 routes `@SkipEnvelope()` (or set `registerController: false` and mount your own) so the RFC token/error JSON isn't wrapped.
+> Using [`nestjs-http-envelope`](https://github.com/onury/nestjs-http-envelope)? Mark the OAuth2 routes `@SkipEnvelope()` so the RFC token/error JSON isn't wrapped: `SkipEnvelope()(OAuth2PasswordController)` before bootstrap, or set `registerController: false` and mount your own. The error half needs nestjs-http-envelope v1.0.2 or later; before it, `@SkipEnvelope()` skipped the success envelope only, and errors lost their `error_description`.
 
 ## The seams
 
